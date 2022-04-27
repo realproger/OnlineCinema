@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html lang="en-US">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Title -->
-      <title>Filmoja</title>
-      <!-- Favicon -->
-      <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-      <!--Bootstrap css-->
-      <link rel="stylesheet" href="assets/css/bootstrap.css">
-      <!--Font Awesome css-->
-      <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-      <!--Magnific css-->
-      <link rel="stylesheet" href="assets/css/magnific-popup.css">
-      <!--Owl-Carousel css-->
-      <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-      <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-      <!--Animate css-->
-      <link rel="stylesheet" href="assets/css/animate.min.css">
-      <!--Slicknav css-->
-      <link rel="stylesheet" href="assets/css/slicknav.min.css">
-      <!--Site Main Style css-->
-      <link rel="stylesheet" href="assets/css/style.css">
-      <!--Responsive css-->
-      <link rel="stylesheet" href="assets/css/responsive.css">
-   </head>
+{% extends 'bootstrap/bootstrap.html' %}
+{% load static %}
+{% block content %}
    <body>
-       
-       
       <!-- Header Area Start -->
       <header class="filmoja-header-area">
           
@@ -100,7 +74,7 @@
                                  </form>
                               </li>
                               <!-- Mobile Search End -->
-                              <li class="active"><a href="index.html">home</a></li>
+                              <li class="active"><a href="index.html"> </a></li>
                               <li>
                                  <a href="#">pages</a>
                                  <ul>
@@ -1808,22 +1782,7 @@
          </div>
       </footer>
       <!-- Footer Area End -->
-       
-       
-      <!--Jquery js-->
-      <script src="assets/js/jquery-3.0.0.min.js"></script>
-      <!--Jquery-ui js-->
-      <script src="assets/js/jquery-ui.min.js"></script>
-      <!--Bootstrap js-->
-      <script src="assets/js/bootstrap.min.js"></script>
-      <!--Owl-Carousel js-->
-      <script src="assets/js/owl.carousel.min.js"></script>
-      <!--SlickNav js-->
-      <script src="assets/js/jquery.slicknav.min.js"></script>
-      <!--Magnific js-->
-      <script src="assets/js/jquery.magnific-popup.min.js"></script>
-      <!--Main js-->
-      <script src="assets/js/main.js"></script>
+     
    </body>
 </html>
-
+{% endblock %}
