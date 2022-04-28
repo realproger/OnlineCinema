@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en-US">
+
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +27,7 @@
       <!--Responsive css-->
       <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
    </head>
-
+   <body>
    {% block content %}
 
    
@@ -46,3 +47,6 @@
       <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
       <!--Main js-->
       <script src="{% static 'assets/js/main.js' %}"></script>
+
+   </body>
+</html>

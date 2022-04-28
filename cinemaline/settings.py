@@ -38,7 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #Apps
-    'onlinecinemaKG',
+    'apps.onlinecinemaKG',
+    'apps.settings',
+    'apps.users',
+# Add the following django-allauth apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google', # for Google OAuth 2.0
 ]
 
 MIDDLEWARE = [
@@ -130,3 +137,4 @@ MEDIA_ROOT= BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'users.User'

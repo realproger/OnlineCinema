@@ -1,0 +1,136 @@
+{% load static %}
+      <!-- Header Area Start -->
+      <header class="filmoja-header-area">
+          
+        <!-- Header Top Area Start -->
+        <div class="header-top-area">
+           <div class="container">
+              <div class="row">
+                 <div class="col-lg-6 col-sm-4">
+                    <div class="header-top-social">
+                       <ul>
+                          <li><a href="#"><i class="fa fa-facebook-square"></i></a>FaceBook</li>
+                          <li><a href="#"><i class="fa fa-twitter-square"></i></a>Twitter</li>
+                          <li><a href="#"><i class="fa fa-google-plus-square"></i></a>Google</li>
+                          <li><a href="#"><i class="fa fa-linkedin-square"></i></a>Linkedin</li>
+                          <li><a href="#"><i class="fa fa-pinterest-square"></i></a>Pinterest</li>
+                       </ul>
+                    </div>
+                 </div>
+                 <div class="col-lg-6 col-sm-8">
+                    <div class="header-top-menu">
+                       <ul>
+                          <li><a href="#">Сообщество</a></li>
+                          <li><a href="#">Вопросы</a></li>
+                          <li><a href="#">Помощь</a></li>
+                          <li><a href="{% url 'user_login' %}">Авторизация</a></li>
+                          <li><a href="{% url 'register' %}">Регистрация</a></li>
+                       </ul>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <!-- Header Top Area End -->
+         
+        <!-- Main Header Area Start -->
+        <div class="main-header-area">
+           <div class="container">
+              <div class="row">
+                 <div class="col-lg-2">
+                    <div class="site-logo">
+                       <a href="index.html">
+                       <img src="{% static 'assets/img/logo.png' %}" alt="filmoja" />
+                       </a>
+                    </div>
+                    <!-- Responsive Menu Start -->
+                    <div class="filmoja-responsive-menu"></div>
+                    <!-- Responsive Menu End -->
+                 </div>
+                 <div class="col-lg-4">
+                    <div class="header-main-search hide-mobile">
+                       <form>
+                          <input type="search" placeholder="Search...">
+                          <button type="submit">
+                          <i class="fa fa-search"></i>
+                          </button>
+                       </form>
+                    </div>
+                 </div>
+                 <div class="col-lg-6">
+                    <div class="mainmenu">
+                       <nav>
+                          <ul id="responsive_navigation">
+                             <!-- Mobile Search Start -->
+                             <li class="header-main-search hide-desktop">
+                                <form>
+                                   <input type="search" placeholder="Search...">
+                                   <button type="submit">
+                                   <i class="fa fa-search"></i>
+                                   </button>
+                                </form>
+                             </li>
+                             <!-- Mobile Search End -->
+                             <li class="active"><a href="index.html"> </a></li>
+                             <li>
+                                <a href="#">Страницы</a>
+                                <ul>
+                                   <li><a href="about.html">about us</a></li>
+                                   <li><a href="pricing.html">pricing</a></li>
+                                   <li class="submenu-parent">
+                                      <a href="#">blog</a>
+                                      <ul class="submenu">
+                                         <li><a href="blog.html">blog</a></li>
+                                         <li><a href="single-blog.html">blog details</a></li>
+                                      </ul>
+                                   </li>
+                                   <li class="submenu-parent">
+                                      <a href="#">Authentication</a>
+                                      <ul class="submenu">
+                                         <li><a href="login.html">login</a></li>
+                                         <li><a href="register.html">register</a></li>
+                                      </ul>
+                                   </li>
+                                   <li><a href="404.html">404 error</a></li>
+                                </ul>
+                             </li>
+                             <li>
+                                <a href="#">Фильмы</a>
+                                <ul>
+                                   <li><a href="movie-list.html">Список фильмов</a></li>
+                                   <li class="submenu-parent">
+                                      <a href="#">Сетка фильмов</a>
+                                      <ul class="submenu">
+                                         <li><a href="movie-grid-sidebar.html">Боковая панель сетки</a></li>
+                                         <li><a href="movie-full-grid.html">Полная сетка страницы</a></li>
+                                      </ul>
+                                   </li>
+                                   <li><a href="single-movie.html">Подробности фильма</a></li>
+                                </ul>
+                             </li>
+                             <li>
+                                <a href="#">ТВ Шоу</a>
+                                <ul>
+                                   <li><a href="tv-series.html">ТВ сериалы</a></li>
+                                   <li><a href="single-series.html">Детали серии</a></li>
+                                </ul>
+                             </li>
+                             <li>
+                                <a href="#">Знаменитости</a>
+                                <ul>
+                                   <li><a href="celebrities.html">Все знаменитости</a></li>
+                                   <li><a href="celebritie-details.html">Подробности о знаменитостях</a></li>
+                                </ul>
+                             </li>
+                             <li><a href="contact.html">Контакты</a></li>
+                          </ul>
+                       </nav>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <!-- Main Header Area End -->
+         
+     </header>
+     <!-- Header Area End -->
