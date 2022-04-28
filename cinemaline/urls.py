@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from apps.onlinecinemaKG.views import index
+# from apps.settings.models import Setting
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name = 'index'),
+    path('', include('apps.settings.urls')),
     path('', include('apps.users.urls')),
     path('accounts/', include('allauth.urls')),
 ]

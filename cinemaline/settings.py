@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #Apps
-    'apps.onlinecinemaKG',
     'apps.settings',
     'apps.users',
 # Add the following django-allauth apps
