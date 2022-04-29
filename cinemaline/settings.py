@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 #Apps
     'apps.settings',
     'apps.users',
+    'apps.movies',
+    'apps.categories',
 # Add the following django-allauth apps
     'allauth',
     'allauth.account',
