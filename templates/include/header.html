@@ -9,11 +9,11 @@
                  <div class="col-lg-6 col-sm-4">
                     <div class="header-top-social">
                        <ul>
-                          <li><a href=""><i class="fa fa-facebook-square"></i></a>FaceBook</li>
-                          <li><a href="#"><i class="fa fa-twitter-square"></i></a>Twitter</li>
-                          <li><a href="#"><i class="fa fa-google-plus-square"></i></a>Google</li>
-                          <li><a href="#"><i class="fa fa-linkedin-square"></i></a>Linkedin</li>
-                          <li><a href="#"><i class="fa fa-pinterest-square"></i></a>Pinterest</li>
+                          <li><a href="{{ home.facebook }}"><i class="fa-brands fa-facebook"></i></a>FaceBook</li>
+                          <li><a href="{{ home.twitter }}"><i class="fa-brands fa-twitter-square"></i></a>Twitter</li>
+                          <li><a href="{{ home.google }}"><i class="fa-brands fa-google"></i></a>Google</li>
+                          <li><a href="{{ home.linkedin }}"><i class="fa-brands fa-linkedin"></i></a>Linkedin</li>
+                          <li><a href="{{ home.pinterest }}"><i class="fa-brands fa-pinterest-square"></i></a>Pinterest</li>
                        </ul>
                     </div>
                  </div>
@@ -40,7 +40,7 @@
                  <div class="col-lg-2">
                     <div class="site-logo">
                        <a href="index.html">
-                       <img src="{% static 'assets/img/logo.png' %}" alt="filmoja" />
+                       <img src="{{ home.logo.url }}" style="width: 85px;" alt="filmoja" />
                        </a>
                     </div>
                     <!-- Responsive Menu Start -->

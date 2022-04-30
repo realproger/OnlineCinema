@@ -23,6 +23,7 @@ class Movie(models.Model):
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='movie_category')
     slug = models.SlugField()
+    movie_trailer = models.CharField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

@@ -34,7 +34,7 @@ def movie_search(request):
         products = Movie.objects.filter(Q(title__icontains = qury_obj))
     context = {
         'home' : home, 
-        'products' : products
+        'movies' : movies
     }
     return render(request, 'movies/search.html', context)
 

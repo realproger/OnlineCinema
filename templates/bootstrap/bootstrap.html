@@ -6,13 +6,13 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Title -->
-      <title>Filmoja</title>
+      <title>{{ home.title }}</title>
       <!-- Favicon -->
       <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicon/favicon-32x32.png' %}">
       <!--Bootstrap css-->
       <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
       <!--Font Awesome css-->
-      <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <!--Magnific css-->
       <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
       <!--Owl-Carousel css-->
@@ -26,6 +26,7 @@
       <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
       <!--Responsive css-->
       <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+      
    </head>
    <body>
    {% block content %}

@@ -5,6 +5,7 @@
               
       <!-- Slider Area Start -->
       <section class="filmoja-slider-area fix">
+         {% for slide in slide_movies %}
          <div class="filmoja-slide owl-carousel">
             <div class="filmoja-main-slide slide-item-2">
                <div class="filmoja-main-caption">
@@ -14,13 +15,14 @@
                            <div class="col-md-12">
                               <div class="slider-content-holder">
                                  <div class="slider-text">
-                                    <h4>Action</h4>
-                                    <h2>Dareing Joker :  <br> Card</h2>
-                                    <p class="release-slider">release on: 20 Dec,2014</p>
+                                    <h4>{{ slide.genre }}</h4>
+                                    <h2>{{ slide.title }}</h2>
+                                    <p class="release-slider">{{ slide.year_of_issue }}</p>
+                                    <!-- <img src="{{ slide.main_movie_image.url }}" alt=""> -->
                                  </div>
                                  <div class="slider-play">
-                                    <a class="popup-youtube" href="https://www.youtube.com/watch?v=1Q8fG0TtVAY">
-                                    <i class="fa fa-play"></i> watch trailer
+                                    <a class="popup-youtube" href="{{ slide.movie_trailer }}">
+                                    <i class="fa fa-play"></i> Смотреть трейлер
                                     </a>
                                  </div>
                               </div>
@@ -30,54 +32,7 @@
                   </div>
                </div>
             </div>
-            <div class="filmoja-main-slide slide-item-5">
-               <div class="filmoja-main-caption">
-                  <div class="filmoja-caption-cell">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-12">
-                              <div class="slider-content-holder">
-                                 <div class="slider-text">
-                                    <h4>Science Fiction</h4>
-                                    <h2>Black Stone of the <br> Club</h2>
-                                    <p class="release-slider">release on: 20 Dec,2014</p>
-                                 </div>
-                                 <div class="slider-play">
-                                    <a class="popup-youtube" href="https://www.youtube.com/watch?v=1Q8fG0TtVAY">
-                                    <i class="fa fa-play"></i> watch trailer
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="filmoja-main-slide slide-item-3">
-               <div class="filmoja-main-caption">
-                  <div class="filmoja-caption-cell">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-12">
-                              <div class="slider-content-holder">
-                                 <div class="slider-text">
-                                    <h4>Commedy</h4>
-                                    <h2>Sunrisers : Fury <br> 2019</h2>
-                                    <p class="release-slider">release on: 20 Dec,2014</p>
-                                 </div>
-                                 <div class="slider-play">
-                                    <a class="popup-youtube" href="https://www.youtube.com/watch?v=1Q8fG0TtVAY">
-                                    <i class="fa fa-play"></i> watch trailer
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            {% endfor %}
          </div>
       </section>
       <!-- Slider Area End -->
@@ -90,6 +45,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="filmoja-heading">
+                     <h6>{{ home.title }} </h6>
                      <h2>Топовые фильмы :<span> 2021 года</span></h2>
                   </div>
                </div>
@@ -97,22 +53,24 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="top-movie-slider owl-carousel">
+                     {% for movie in most_popular_movie %}
                      <div class="single-top-movie">
                         <div class="top-movie-wrap">
                            <div class="top-movie-img">
                               <a href="#">
-                              <img src="{% static 'assets/img/top-slider-1.jpeg' %}" alt="top movies" />
+                              <img src="{{ movie.main_movie_image.url }}" alt="top movies" />
                               </a>
                            </div>
                            <div class="thumb-hover">
-                              <a class="play-video" href="https://www.youtube.com/watch?v=1Q8fG0TtVAY"><i class="fa fa-play"></i></a>
+                              <a class="play-video" href="{{ movie.movie_trailer }}"><i class="fa fa-play"></i></a>
+
                               <div class="thumb-date">
                                  <span>05:30</span>
                               </div>
                            </div>
                         </div>
                         <div class="top-movie-details">
-                           <h4><a href="#">Dareing Joker</a></h4>
+                           <h4><a href="#">{{ movie.title }}</a></h4>
                            <div class="movie-details-thumbs">
                               <ul>
                                  <li>
@@ -129,6 +87,7 @@
                            </div>
                         </div>
                      </div>
+                     {% endfor %}
                </div>
             </div>
          </div>
@@ -142,14 +101,16 @@
             <div class="row">
                <div class="col-md-5">
                   <div class="theater-left">
+                     {% for genre in one_random_genre %}
                      <div class="theater-box">
                         <div class="theater-text">
                            <h3>Сегодня в кино</h3>
-                           <h4>Боевики, Приключения, Фэнтези</h4>
+                           <h4>{{ genre.genre }}</h4>
                            <p>Забронируй место, пока не пропустил завтра.</p>
                            <a href="#" class="filmoja-btn">Узнать все</a>
                         </div>
                      </div>
+                     {% endfor %}
                   </div>
                </div>
                <div class="col-md-7">
@@ -174,45 +135,48 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="filmoja-heading">
-                     <h2>Популярные <span>Филмы </span></h2>
+                     <h6>{{ home.title }} </h6>
+                     <h2>Популярные <span>Фильмы </span></h2>
                   </div>
                </div>
             </div>
             <div class="row">
                <div class="col-md-12">
                   <div class="tv-panel-list">
+                  
                      <div class="tv-tab">
                         <ul class="nav nav-pills tv-tab-switch" id="pills-tab" role="tablist">
                            <li class="nav-item">
                               <a class="nav-link active" id="pills-popular-tab" data-toggle="pill" href="#pills-popular" role="tab" aria-controls="pills-popular" aria-selected="true">Новинки</a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" id="pills-upcoming-tab" data-toggle="pill" href="#pills-upcoming" role="tab" aria-controls="pills-upcoming" aria-selected="false">Сери</a>
+                              <a class="nav-link" id="pills-upcoming-tab" data-toggle="pill" href="#pills-upcoming" role="tab" aria-controls="pills-upcoming" aria-selected="false">Сериалы</a>
                            </li>
                           
                         </ul>
                      </div>
+                     
                      <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
                            <div class="tab-movies">
                               <div class="row">
+                                 {% for movie in one_random_movie %}
                                  <div class="col-lg-3 col-sm-6">
                                     <div class="single-top-movie">
                                        <div class="top-movie-wrap">
                                           <div class="top-movie-img">
-                                             <a href="#">
-                                             <img src="{% static 'assets/img/top-slider-1.jpeg' %}" alt="top movies" />
+                                             <a href="#"><img src="{{ movie.main_movie_image.url }}" alt="top movies" />
                                              </a>
                                           </div>
                                           <div class="thumb-hover">
-                                             <a class="play-video" href="https://www.youtube.com/watch?v=1Q8fG0TtVAY"><i class="fa fa-play"></i></a>
+                                             <a class="play-video" href="{{ movie.movie_trailer }}"><i class="fa fa-play"></i></a>
                                              <div class="thumb-date">
                                                 <span>05:30</span>
                                              </div>
                                           </div>
                                        </div>
                                        <div class="top-movie-details">
-                                          <h4><a href="#">Dareing Joker</a></h4>
+                                          <h4><a href="#">{{ movie.title }}</a></h4>
                                           <div class="movie-details-thumbs">
                                              <ul>
                                                 <li>
@@ -230,19 +194,12 @@
                                        </div>
                                     </div>
                                  </div>
-                                
-                               
-                                       
-                                             </ul>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
+                                 {% endfor %}
                               </div>
                               <!-- End Row -->
                            </div>
-                        
-                     
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -257,12 +214,12 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="quote-box">
-                     <h4>Action, Adventure, Fantasy</h4>
-                     <h3>be the first to know</h3>
+                     <h4>Боевик, Приключения, Фэнтези</h4>
+                     <h3>Узнай первым</h3>
                      <a href="#" class="mouse-icon hidden-sm"><span class="wheel"><i class="fa fa-long-arrow-down"></i></span></a>
                      <form>
-                        <input type="email" placeholder="E-mail Address...">
-                        <button type="submit">Subscribe</button>
+                        <input type="email" placeholder="E-mail Адрес...">
+                        <button type="submit">Подпишись</button>
                      </form>
                   </div>
                </div>
@@ -273,12 +230,13 @@
        
        
       <!-- News Area Start -->
-      <section class="filmoja-news-area section_70">
+      <!-- <section class="filmoja-news-area section_70">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="filmoja-heading">
-                     <h2>latest <span>news</span></h2>
+                     <h6>{{ home.title }} </h6>
+                     <h2>Последние <span>Новости</span></h2>
                   </div>
                </div>
             </div>
@@ -287,7 +245,7 @@
                   <div class="single-news-item">
                      <div class="news-image">
                         <a href="#">
-                        <img src="assets/img/big_news.jpg" alt="news" />
+                        <img src="{% static 'assets/img/big_news.jpg' %}" alt="news" />
                         </a>
                         <div class="news-date">
                            <span class="date">12</span>
@@ -354,7 +312,7 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- News Area End -->
       {% include 'include/footer.html' %}     
 {% endblock %}

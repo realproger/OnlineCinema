@@ -47,7 +47,7 @@ JS INDEX
 			autoplaySpeed: 2000,
 			autoplay: true,
 			loop: true,
-			navText: ["<img src='assets/img/prev-1.png'>", "<img src='assets/img/next-1.png'>"],
+			navText: ["<i style='font-size:30px;' class='fa-solid fa-arrow-left-long'></i>", "<i style='font-size:30px;' class='fa-solid fa-arrow-right'></i>"],
 			mouseDrag: true,
 			touchDrag: true,
 			responsive: {

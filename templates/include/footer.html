@@ -6,25 +6,27 @@
               <div class="row">
                  <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
-                       <a href="#"><img src="{% static 'assets/img/footer_logo.png' %}" alt="footer logo" /></a>
-                       <p>5th Avenue st, manhattan</p>
-                       <p>New York, NY 10001</p>
+                       <a href="#"><img src="{{ home.logo.url }}" alt="footer logo" style="width: 140px;"/></a>
+                       <p>5-я Авеню, Манхэттен</p>
+                       <p>Нью-Йорк, NY 10001</p>
                        <div class="footer-contact">
-                          <p>mail us: <a href="#">support@flixgo.com</a></p>
-                          <p>call us: <a href="#">+1 (800) 234-5678</a></p>
-                          <ul>
-                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                          </ul>
+                          <p>Почта: <a href="#">{{ home.email }}</a></p>
+                          <p>позвонить нам: <a href="#">{{ home.tel }}</a></p>
                        </div>
+                       <div>
+                          <ul>
+                             <li><a href="{{ home.facebook }}"><i class="fa-brands fa-facebook"></i></a>FaceBook</li>
+                             <li><a href="{{ home.twitter }}"><i class="fa-brands fa-twitter-square"></i></a>Twitter</li>
+                             <li><a href="{{ home.google }}"><i class="fa-brands fa-google"></i></a>Google</li>
+                             <li><a href="{{ home.linkedin }}"><i class="fa-brands fa-linkedin"></i></a>Linkedin</li>
+                             <li><a href="{{ home.pinterest }}"><i class="fa-brands fa-pinterest-square"></i></a>Pinterest</li>
+                           </ul>
+                        </div>
                     </div>
                  </div>
                  <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
-                       <h3>quick links</h3>
+                       <h3>Быстрые ссылки</h3>
                        <ul>
                           <li><a href="#"><i class="fa fa-angle-double-right"></i>about filmoja</a></li>
                           <li><a href="#"><i class="fa fa-angle-double-right"></i>get a ticket</a></li>
