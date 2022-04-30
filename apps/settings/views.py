@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.settings.models import Setting
+from apps.settings.models import Setting, About
 from apps.movies.models import Movie, MovieComment
 from apps.categories.models import Category
 # Create your views here.
@@ -26,14 +26,12 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-# def about(request):
-#     home = Setting.objects.latest('-id')
-#     about = About.objects.latest('id')
-#     teams = Team.objects.all().order_by('-id')
-#     context = {
-#         'home' : home,
-#         'about' : about, 
-#         'teams' : teams, 
-#     }
+def about(request):
+    home = Setting.objects.latest('-id')
+    about = About.objects.latest('id')
+    context = {
+        'home' : home,
+        'about' : about, 
+    }
 
-#     return render(request, 'about.html', context)
+    return render(request, 'about.html', context)
