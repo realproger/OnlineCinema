@@ -10,10 +10,10 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="breadcrumb-box">
-                     <h2>about us</h2>
+                     <h2>О нас</h2>
                      <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active-breadcromb">about us</li>
+                        <li><a href="{% url 'index' %}">Домой</a></li>
+                        <li class="active-breadcromb">О нас</li>
                      </ul>
                   </div>
                </div>
@@ -58,7 +58,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="filmoja-heading">
-                     <h2>filmoja<span> Features</span></h2>
+                     <h2>{{ home.title }}<span> Функции</span></h2>
                   </div>
                </div>
             </div>
@@ -126,7 +126,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="filmoja-heading">
-                     <h2>Our<span> Patner’s</span></h2>
+                     <h2>Наши<span>Партнеры</span></h2>
                   </div>
                </div>
             </div>
@@ -165,6 +165,8 @@
       </section>
       <!-- Partner Area End -->
        
-{% include 'include/footer.html' %}     
+       
+      {% include 'include/footer.html' %}     
 {% endblock %}
+
 

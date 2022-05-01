@@ -15,7 +15,7 @@ class Setting(models.Model):
 
     def __str__(self):
         return self.title 
-
+ 
     class Meta:
         verbose_name = "Настройка"
         verbose_name_plural = "Настройки"
@@ -24,8 +24,6 @@ class About(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     owner = models.CharField(max_length=255)
-    position = models.CharField(max_length=100)
-    signature = models.ImageField(upload_to = "signature/")
 
     def __str__(self):
         return self.title
