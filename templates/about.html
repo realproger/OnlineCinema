@@ -29,21 +29,21 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="about-slider owl-carousel">
+                     {% for image in about.image.all %}
                      <div class="single-about-slider">
-                        <img src="assets/img/slider-1.jpeg" alt="sldier" />
+                        <img src="{{ about.about_image.url }}" alt="sldier" />
                      </div>
-                     <div class="single-about-slider">
-                        <img src="assets/img/slider-4.jpeg" alt="sldier" />
-                     </div>
+                     {% endfor%}
+                     
                   </div>
                </div>
             </div>
             <div class="row">
                <div class="col-md-12">
                   <div class="about-page-text">
-                     <h3>about our journey</h3>
-                     <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor nt ut labore et dolore magna aliqua. Ut enim ad minim veniams nostrudullamco laboris nisi ut aliquip</p>
-                     <p>Duis aute irure dolor in it in voluptate it esscillumiore eu fugiat nulla pariatur. Excepteur sint occaeat idatat non proident, sunt in culpa qui officia deserunt mollit anim id estnm. ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor- emque totam remquae.</p>
+                     <h5>{{ home.title }}</h5>
+                     <h3>{{ about.title }}</h3>
+                     <p>{{ about.description }}</p>
                   </div>
                </div>
             </div>

@@ -24,10 +24,14 @@ class About(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     owner = models.CharField(max_length=255)
-
+ 
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name = "О нас"
         verbose_name_plural = "О нас"
+
+class AboutImage(models.Model):
+    about = models.ForeignKey(About, on_delete=models.CASCADE, related_name="about_image")
+    image = models.ImageField(upload_to = "about_image/")
