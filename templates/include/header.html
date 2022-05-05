@@ -39,7 +39,7 @@
               <div class="row">
                  <div class="col-lg-2">
                     <div class="site-logo">
-                       <a href="index.html">
+                       <a href="{% url 'index' %}">
                        <img src="{{ home.logo.url }}" style="width: 85px;" alt="filmoja" />
                        </a>
                     </div>
@@ -71,27 +71,25 @@
                                 </form>
                              </li>
                              <!-- Mobile Search End -->
-                             <li class="active"><a href="index.html"> </a></li>
+                             <li class="active"><a href="{% url 'index' %}"> </a></li>
                              <li>
                                 <a href="#">Страницы</a>
                                 <ul>
-                                   <li><a href="about.html">about us</a></li>
-                                   <li><a href="pricing.html">pricing</a></li>
+                                   <li><a href="{% url 'about_us' %}">О нас</a></li>
                                    <li class="submenu-parent">
-                                      <a href="#">blog</a>
+                                      <a href="#">Блог</a>
                                       <ul class="submenu">
-                                         <li><a href="blog.html">blog</a></li>
-                                         <li><a href="single-blog.html">blog details</a></li>
+                                         <li><a href="blog.html">Оценки</a></li>
+                                         <li><a href="single-blog.html">Коментарий</a></li>
                                       </ul>
                                    </li>
                                    <li class="submenu-parent">
-                                      <a href="#">Authentication</a>
+                                      <a href="{% url 'register' %}">Регистрация</a>
                                       <ul class="submenu">
-                                         <li><a href="login.html">login</a></li>
-                                         <li><a href="register.html">register</a></li>
+                                         <li><a href=" {% url 'user_login' %}">Авторизация</a></li>
                                       </ul>
                                    </li>
-                                   <li><a href="404.html">404 error</a></li>
+                                   <li><a href="">404 Ошибки</a></li>
                                 </ul>
                              </li>
                              <li>
@@ -122,7 +120,7 @@
                                    <li><a href="celebritie-details.html">Подробности о знаменитостях</a></li>
                                 </ul>
                              </li>
-                             <li><a href="contact.html">Контакты</a></li>
+                             <li><a href="{% url 'contact' %}">Контакты</a></li>
                           </ul>
                        </nav>
                     </div>

@@ -35,4 +35,24 @@ def about(request):
     }
 
     return render(request, 'about.html', context)
+
+def handler404(request, exeption): #404 template
+    home = Setting.objects.latest('id')
+    categories = Category.objects.all().order_by('-id')
+
+    context = {
+        'home' : home,
+        'categories' : categories,
+    }
+
+    response =render(request, "404.html", context=context)
+    response.status_code = 404
+    return response
  
+def contact(request):
+    home = Setting.objects.latest('id')
+
+    context ={
+        'home':home,
+    }
+    return render(request, "contact.html",  context )

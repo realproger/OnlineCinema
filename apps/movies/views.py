@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
-from apps.movies.models import Movie, MovieComment
+from apps.movies.models import Movie, MovieComment,MovieImage
 from apps.settings.models import Setting
 from apps.categories.models import Category
 from django.db.models import Q
@@ -19,7 +19,7 @@ def movie_detail(request, id):
         return redirect('movie_detail', movie.id)
 
     context = {
-        'mmovie' : movie,
+        'movie' : movie,
         'random_movies' : random_movies,
         'home' : home,
         'categories' : categories,
@@ -71,6 +71,14 @@ def movie_delete(request, id):
         return HttpResponseRedirect("/")
  
     return render(request, "movies/delete.html", context)
+# бу ерди янги ёздим
+def all_movies(request, id):
+    # all_movies = Movie.objects.get(id = id)
+    # context = {
+    #     'all_movies' : all_movies,
+    # }
+    return render(request, "movie-full-grid.html" ) #шу html га уланиш кк
+
 
 
 

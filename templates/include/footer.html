@@ -6,12 +6,12 @@
               <div class="row">
                  <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
-                       <a href="#"><img src="{{ home.logo.url }}" alt="footer logo" style="width: 140px;"/></a>
+                       <a href="{% url 'index' %}"><img src="{{ home.logo.url }}" alt="footer logo" style="width: 140px;"></a>
                        <p>5-я Авеню, Манхэттен</p>
                        <p>Нью-Йорк, NY 10001</p>
                        <div class="footer-contact">
                           <p>Почта: <a href="#">{{ home.email }}</a></p>
-                          <p>позвонить нам: <a href="#">{{ home.tel }}</a></p>
+                          <p>позвонить нам: <a href="+996555123456">{{ home.tel }}</a></p>
                        </div>
                        <div>
                           <ul>

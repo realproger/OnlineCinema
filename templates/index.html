@@ -6,24 +6,26 @@
       <!-- Slider Area Start -->
       <section class="filmoja-slider-area fix">
          {% for slide in slide_movies %}
-         <div class="filmoja-slide owl-carousel">
-            <div class="filmoja-main-slide slide-item-2">
-               <div class="filmoja-main-caption">
-                  <div class="filmoja-caption-cell">
+         <div class="filmoja-slide owl-carousel" >
+         <div class="filmoja-main-slide slide-item-2">
+            <div class="filmoja-main-caption">
+               <div class="filmoja-caption-cell">
+                  
                      <div class="container">
                         <div class="row">
                            <div class="col-md-12">
                               <div class="slider-content-holder">
-                                 <div class="slider-text">
-                                    <h4>{{ slide.genre }}</h4>
-                                    <h2>{{ slide.title }}</h2>
-                                    <p class="release-slider">{{ slide.year_of_issue }}</p>
-                                    <!-- <img src="{{ slide.main_movie_image.url }}" alt=""> -->
-                                 </div>
                                  <div class="slider-play">
-                                    <a class="popup-youtube" href="{{ slide.movie_trailer }}">
-                                    <i class="fa fa-play"></i> Смотреть трейлер
-                                    </a>
+                                    <div class="popup-youtube" href="{{ slide.movie_trailer }}">
+                                       <div class="slider-text">
+                                          <h5 >{{ slide.genre }}</h5>
+                                          <h4>{{ slide.title }}</h4>
+                                       <p class="release-slider">{{ slide.year_of_issue }}</p>
+                                       <div ><img  src="{{ slide.main_movie_image.url }}" style=" height:200%; width:250px; margin-left: 450px ; margin-inline-end: 700px;;margin-block-end: 10px;"  >
+                                          <i class="fa fa-play"></i> Смотреть трейлер
+                                       </div>
+                                    </div>                                   
+                                    </div>                 
                                  </div>
                               </div>
                            </div>
@@ -46,7 +48,7 @@
                <div class="col-md-12">
                   <div class="filmoja-heading">
                      <h6>{{ home.title }} </h6>
-                     <h2>Топовые фильмы :<span> 2021 года</span></h2>
+                     <h2>Топовые :<span> 2022 года</span></h2>
                   </div>
                </div>
             </div>
