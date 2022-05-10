@@ -1,12 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en-US"> 
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Title -->
-      <title>{{ home.title }}</title>
+      <!-- Title  -->
+      <title>{{ home.title }}</title> 
       <!-- Favicon -->
       <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicon/favicon-32x32.png' %}">
       <!--Bootstrap css-->
@@ -25,15 +24,25 @@
       <!--Site Main Style css-->
       <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
       <!--Responsive css-->
-      <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
-      
+      <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}"> 
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+      <link rel="stylesheet" href="{% static 'assets/owlcarousel/owl.carousel.min.css'%}">
+      <link rel="stylesheet" href="{% static 'assets/owlcarousel/owl.theme.default.min.css'%}">
+    
    </head>
    <body>
    {% block content %}
 
    
    {% endblock %}
-       
+   <script src="{% static 'assets/jquery.min.js'%}"></script>
+<script src="{% static 'assets/owlcarousel/owl.carousel.min.js'%}"></script>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js " rel="stylesheet"/>
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" rel="stylesheet"/>
+   
+      
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
       <!--Jquery js-->
       <script src="{% static 'assets/js/jquery-3.0.0.min.js' %}"></script>
       <!--Jquery-ui js-->
@@ -48,6 +57,10 @@
       <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
       <!--Main js-->
       <script src="{% static 'assets/js/main.js' %}"></script>
+      <script src="{% static 'assets/js/script.js' %}"></script>
+
+
+
 
    </body>
 </html>

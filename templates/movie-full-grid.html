@@ -2,7 +2,18 @@
 {% load static %}
 {% block content %}
 {% include 'include/header.html' %}
-              
+   
+      <!-- Breadcrumb Area End -->
+       
+       
+      <!-- Header Area Start -->
+      <header class="filmoja-header-area">
+         
+         <!-- Main Header Area End -->
+          
+      </header>
+      <!-- Header Area End -->
+                  
       <!-- Breadcrumb Area Start -->
       <section class="filmoja-breadcrumb-area section_70">
          <div class="container">
@@ -18,10 +29,7 @@
                </div>
             </div>
          </div>
-      </section>
-      <!-- Breadcrumb Area End -->
-       
-       
+      </section>   
       <!-- Movie List Area Start -->
       <section class="filmoja-movie-list-area section_70">
          <div class="container">
@@ -29,40 +37,39 @@
                <div class="col-lg-12">
                   <div class="browse-option-box">
                      <div class="total-item-show">
-                        <p>Все Фильмы</p>
+                        <p> {{ all_movies.count }} </p>
                      </div>
                      <div class="total-item-show sorter">
-                        <p>Сортировать по</p>
+                        <p>Сортировать по </p>
                         <select>
-                           <option value="popularity">Жанр</option>
-                           <option value="popularity"> Популярные </option>
-                           <option value="rating">Рейтинг</option>
-                           <option value="date">Выход дата </option>
+                           <option value="popularity">Descending</option>
+                           <option value="popularity">Ascending</option>
+                           <option value="rating">Rating</option>
+                           <option value="date">Release date</option>
                         </select>
                      </div>
                   </div>
                   <div class="movie-grid-box">
                      <div class="row">
+                        {% for movies in all_movies %}   
                         <div class="col-lg-4">
                            <div class="single-movie-list movie-grid-layout full-grid">
                               <div class="single-movie-list-left">
                                  <a href="#">
-                                 <img src="assets/img/movie-list-5.jpeg" alt="top movie">
+                                 <img src="" alt="top movie">
                                  </a>
                               </div>
                               <div class="single-movie-list-right">
-                                 <h3><a href="#">Dareing Joker</a></h3>
-                                 <p class="list-genre">Acation</p>
+                                 <h3><a href="#">{{ movies.title }}</a></h3>
+                                 <p class="list-genre">{{ movies.genre }}</p>
                                  <ul>
-                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
-                                    <li class="dsc">HD</li>
-                                    <li class="dsc">16+</li>
+                                    <li class="rating"><i class="fa fa-star"></i>{{ movies.rating }}</li>
+                                    <li class="dsc">{{ movies.age }}+</li>
                                  </ul>
                                  <div class="movie-details-thumbs">
                                     <ul>
                                        <li>
-                                          <a href="#"><i class="fa fa-thumbs-up"></i>
-                                          256</a>
+                                          <a href="#"><i class="fa fa-thumbs-up"></i> {{ movies.like_movie}}</a>
                                        </li>
                                        <li>
                                           <a href="#"><i class="fa fa-eye"></i>45</a>
@@ -70,259 +77,24 @@
                                     </ul>
                                  </div>
                                  <div class="movie-list-info">
-                                    <div class="list-info-left">
-                                       <p>Director: <span>Jhon Doe</span></p>
-                                       <p>Release: <span>12 Dec,2017</span></p>
+                                    <div class="list-info-left" style="font-style: italic;">
+                                       <p>Директор: <span>{{ movies.director_film }} </span></p>
+                                       <p>Дата: <span>{{ movies.created }}</span></p>
                                     </div>
                                     <div class="top-action">
-                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
+                                       <a href="{{ movies.movie_trailer }}" class="popup-youtube"><i class="fa fa-play"></i> Смотреть трейлер</a>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
-                     <!-- End Row -->
-                     <div class="row">
-                        <div class="col-lg-4">
-                           <div class="single-movie-list movie-grid-layout full-grid">
-                              <div class="single-movie-list-left">
-                                 <a href="#">
-                                 <img src="assets/img/movie-list-2.jpeg" alt="top movie">
-                                 </a>
-                              </div>
-                              <div class="single-movie-list-right">
-                                 <h3><a href="#">racing field</a></h3>
-                                 <p class="list-genre">Acation</p>
-                                 <ul>
-                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
-                                    <li class="dsc">HD</li>
-                                    <li class="dsc">16+</li>
-                                 </ul>
-                                 <div class="movie-details-thumbs">
-                                    <ul>
-                                       <li>
-                                          <a href="#"><i class="fa fa-thumbs-up"></i>
-                                          256</a>
-                                       </li>
-                                       <li>
-                                          <a href="#"><i class="fa fa-eye"></i>45</a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                                 <div class="movie-list-info">
-                                    <div class="list-info-left">
-                                       <p>Director: <span>Jhon Doe</span></p>
-                                       <p>Release: <span>12 Dec,2017</span></p>
-                                    </div>
-                                    <div class="top-action">
-                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-lg-4">
-                           <div class="single-movie-list movie-grid-layout full-grid">
-                              <div class="single-movie-list-left">
-                                 <a href="#">
-                                 <img src="assets/img/movie-list-1.jpeg" alt="top movie">
-                                 </a>
-                              </div>
-                              <div class="single-movie-list-right">
-                                 <h3><a href="#">Blood Day war</a></h3>
-                                 <p class="list-genre">Acation</p>
-                                 <ul>
-                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
-                                    <li class="dsc">HD</li>
-                                    <li class="dsc">16+</li>
-                                 </ul>
-                                 <div class="movie-details-thumbs">
-                                    <ul>
-                                       <li>
-                                          <a href="#"><i class="fa fa-thumbs-up"></i>
-                                          256</a>
-                                       </li>
-                                       <li>
-                                          <a href="#"><i class="fa fa-eye"></i>45</a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                                 <div class="movie-list-info">
-                                    <div class="list-info-left">
-                                       <p>Director: <span>Jhon Doe</span></p>
-                                       <p>Release: <span>12 Dec,2017</span></p>
-                                    </div>
-                                    <div class="top-action">
-                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-lg-4">
-                           <div class="single-movie-list movie-grid-layout full-grid">
-                              <div class="single-movie-list-left">
-                                 <a href="#">
-                                 <img src="assets/img/movie-list-4.jpeg" alt="top movie">
-                                 </a>
-                              </div>
-                              <div class="single-movie-list-right">
-                                 <h3><a href="#">Mr. Cartoon</a></h3>
-                                 <p class="list-genre">Acation</p>
-                                 <ul>
-                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
-                                    <li class="dsc">HD</li>
-                                    <li class="dsc">16+</li>
-                                 </ul>
-                                 <div class="movie-details-thumbs">
-                                    <ul>
-                                       <li>
-                                          <a href="#"><i class="fa fa-thumbs-up"></i>
-                                          256</a>
-                                       </li>
-                                       <li>
-                                          <a href="#"><i class="fa fa-eye"></i>45</a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                                 <div class="movie-list-info">
-                                    <div class="list-info-left">
-                                       <p>Director: <span>Jhon Doe</span></p>
-                                       <p>Release: <span>12 Dec,2017</span></p>
-                                    </div>
-                                    <div class="top-action">
-                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- End Col -->
+                        {% endfor %}   
                      </div>
-                     <!-- End Row -->
-                     <div class="row">
-                        <div class="col-lg-4">
-                           <div class="single-movie-list movie-grid-layout full-grid">
-                              <div class="single-movie-list-left">
-                                 <a href="#">
-                                 <img src="assets/img/movie-list-5.jpeg" alt="top movie">
-                                 </a>
-                              </div>
-                              <div class="single-movie-list-right">
-                                 <h3><a href="#">Dareing Joker</a></h3>
-                                 <p class="list-genre">Acation</p>
-                                 <ul>
-                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
-                                    <li class="dsc">HD</li>
-                                    <li class="dsc">16+</li>
-                                 </ul>
-                                 <div class="movie-details-thumbs">
-                                    <ul>
-                                       <li>
-                                          <a href="#"><i class="fa fa-thumbs-up"></i>
-                                          256</a>
-                                       </li>
-                                       <li>
-                                          <a href="#"><i class="fa fa-eye"></i>45</a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                                 <div class="movie-list-info">
-                                    <div class="list-info-left">
-                                       <p>Director: <span>Jhon Doe</span></p>
-                                       <p>Release: <span>12 Dec,2017</span></p>
-                                    </div>
-                                    <div class="top-action">
-                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-lg-4">
-                           <div class="single-movie-list movie-grid-layout full-grid">
-                              <div class="single-movie-list-left">
-                                 <a href="#">
-                                 <img src="assets/img/movie-list-3.jpeg" alt="top movie">
-                                 </a>
-                              </div>
-                              <div class="single-movie-list-right">
-                                 <h3><a href="#">runnig shoot</a></h3>
-                                 <p class="list-genre">Acation</p>
-                                 <ul>
-                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
-                                    <li class="dsc">HD</li>
-                                    <li class="dsc">16+</li>
-                                 </ul>
-                                 <div class="movie-details-thumbs">
-                                    <ul>
-                                       <li>
-                                          <a href="#"><i class="fa fa-thumbs-up"></i>
-                                          256</a>
-                                       </li>
-                                       <li>
-                                          <a href="#"><i class="fa fa-eye"></i>45</a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                                 <div class="movie-list-info">
-                                    <div class="list-info-left">
-                                       <p>Director: <span>Jhon Doe</span></p>
-                                       <p>Release: <span>12 Dec,2017</span></p>
-                                    </div>
-                                    <div class="top-action">
-                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-lg-4">
-                           <div class="single-movie-list movie-grid-layout full-grid">
-                              <div class="single-movie-list-left">
-                                 <a href="#">
-                                 <img src="assets/img/news-1.jpeg" alt="top movie">
-                                 </a>
-                              </div>
-                              <div class="single-movie-list-right">
-                                 <h3><a href="#">Busting Car</a></h3>
-                                 <p class="list-genre">Acation</p>
-                                 <ul>
-                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
-                                    <li class="dsc">HD</li>
-                                    <li class="dsc">16+</li>
-                                 </ul>
-                                 <div class="movie-details-thumbs">
-                                    <ul>
-                                       <li>
-                                          <a href="#"><i class="fa fa-thumbs-up"></i>
-                                          256</a>
-                                       </li>
-                                       <li>
-                                          <a href="#"><i class="fa fa-eye"></i>45</a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                                 <div class="movie-list-info">
-                                    <div class="list-info-left">
-                                       <p>Director: <span>Jhon Doe</span></p>
-                                       <p>Release: <span>12 Dec,2017</span></p>
-                                    </div>
-                                    <div class="top-action">
-                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- End Col -->
-                     </div>
-                     <!-- End Row -->
                   </div>
+               </div>
+            </div>
+         </div>
+
                   <!-- Pagination Start -->
                   <div class="pagination-box-row responsive-pag margin-top">
                      <p>Page 1 of 6</p>

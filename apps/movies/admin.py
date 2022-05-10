@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.movies.models import Movie, MovieImage, MovieComment
+from apps.movies.models import Movie, MovieImage, MovieComment,Actors,LikeProduct
 
 # Register your models here.
 
@@ -17,3 +17,6 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(Movie, ProductAdmin)
 admin.site.register(MovieComment)
+admin.site.register(Actors)
+admin.site.register(LikeProduct)
+

@@ -2,15 +2,15 @@
 {% load static %}
 {% block content %}
 {% include 'include/header.html' %}
-              
+         
       <!-- Slider Area Start -->
+    
       <section class="filmoja-slider-area fix">
-         {% for slide in slide_movies %}
          <div class="filmoja-slide owl-carousel" >
-         <div class="filmoja-main-slide slide-item-2">
-            <div class="filmoja-main-caption">
-               <div class="filmoja-caption-cell">
-                  
+            {% for slide in slide_movies %}  
+            <div class="filmoja-main-slide slide-item-2">
+               <div class="filmoja-main-caption">
+                  <div class="filmoja-caption-cell">
                      <div class="container">
                         <div class="row">
                            <div class="col-md-12">
@@ -21,25 +21,43 @@
                                           <h5 >{{ slide.genre }}</h5>
                                           <h4>{{ slide.title }}</h4>
                                        <p class="release-slider">{{ slide.year_of_issue }}</p>
-                                       <div ><img  src="{{ slide.main_movie_image.url }}" style=" height:200%; width:250px; margin-left: 450px ; margin-inline-end: 700px;;margin-block-end: 10px;"  >
+                                      <div> <img  src="{{ slide.main_movie_image.url }}"  >
                                           <i class="fa fa-play"></i> Смотреть трейлер
                                        </div>
                                     </div>                                   
-                                    </div>                 
-                                 </div>
+                                 </div>                 
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
+               {% endfor %}   
             </div>
-            {% endfor %}
          </div>
-      </section>
+      </div>
+   </section>
       <!-- Slider Area End -->
        
-       
+      <!-- self add carousel start -->
+         <!-- <div class="container mt-5 ">
+            <div class="owl-carousel">
+               {% for slide in slide_movies %}
+               <div class="ms-2 me-2">
+                  <div class="card">
+                           <div><img src="{{ slide.main_movie_image.url }}" alt="" class="card-img-top">
+                           <div class="card-body">
+                              <h5 class="card-title"> image-title </h5>
+                              this is my image
+                              
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div> -->
+      <!-- self add carousel End -->
       <!-- Top Movies Area Start -->
       <section class="filmoja-top-movies-area section_70">
          <div class="container">
@@ -58,9 +76,9 @@
                      {% for movie in most_popular_movie %}
                      <div class="single-top-movie">
                         <div class="top-movie-wrap">
-                           <div class="top-movie-img">
-                              <a href="#">
-                              <img src="{{ movie.main_movie_image.url }}" alt="top movies" />
+                           <div class="top-movie-img" >
+                              <a href="{% url 'single-movie' movie.id %}">
+                              <img src="{{ movie.main_movie_image.url }}" alt="top movies" style="size: 100px;" />
                               </a>
                            </div>
                            <div class="thumb-hover">
@@ -72,7 +90,7 @@
                            </div>
                         </div>
                         <div class="top-movie-details">
-                           <h4><a href="#">{{ movie.title }}</a></h4>
+                           <h4><a href="{% url 'single-movie' movie.id  %}">{{ movie.title }}</a></h4>
                            <div class="movie-details-thumbs">
                               <ul>
                                  <li>
@@ -83,7 +101,7 @@
                                     <a href="#"><i class="fa fa-eye"></i>45</a>
                                  </li>
                                  <li>
-                                    <a href="#"><span class="rating"><i class="fa fa-star"></i>4.5</span></a>
+                                    <a href="#"><span class="rating"><i class="fa fa-star"></i>{{ movie.rating }}</span></a>
                                  </li>
                               </ul>
                            </div>
@@ -189,7 +207,7 @@
                                                    <a href="#"><i class="fa fa-eye"></i>45</a>
                                                 </li>
                                                 <li>
-                                                   <a href="#"><span class="rating"><i class="fa fa-star"></i>4.5</span></a>
+                                                   <a href="#"><span class="rating"><i class="fa fa-star"></i>{{ movie.rating }}</span></a>
                                                 </li>
                                              </ul>
                                           </div>

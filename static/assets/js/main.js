@@ -82,6 +82,29 @@ JS INDEX
 			$(".filmoja-main-slide h2, .filmoja-main-slide p").addClass("animated fadeInLeft").css("opacity", "1");
 			$(".filmoja-main-slide .slider-play").addClass("animated fadeInUp").css("opacity", "1");
 		});
+		$(".owl-carousel").owlCarousel({
+ 
+			autoPlay: 3000,
+			items : 4,
+			itemsDesktop : [1199,3],
+			itemsDesktopSmall : [979,3],
+			center: true,
+			nav:true,
+			loop:true,
+			responsive: {
+			  600: {
+				items: 4
+			  }
+			}
+		   
+		   
+			
+			
+			
+		
+		});
+		
+		});
 
 
 		/* 

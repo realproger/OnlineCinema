@@ -1,0 +1,218 @@
+{% extends 'bootstrap/bootstrap.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+      <!-- Header Area End -->
+       
+       
+      <!-- Breadcrumb Area Start -->
+      <section class="filmoja-breadcrumb-area section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="breadcrumb-box">
+                     <h2>Movie Grid Sidebar</h2>
+                     <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active-breadcromb">movie list</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Breadcrumb Area End -->
+       
+       
+      <!-- Movie List Area Start -->
+      <section class="filmoja-movie-list-area section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3">
+                  <div class="list-sidebar">
+                      
+                     <!-- Single Widget Start -->
+                     <div class="single-sidebar-widget">
+                        <h3 class="sidebar-widget-title">release date:</h3>
+                        <input type="text" id="releasedate" placeholder="Select Date">
+                     </div>
+                     <!-- Single Widget End -->
+                      
+                     <!-- Single Widget Start -->
+                     <div class="single-sidebar-widget">
+                        <h3 class="sidebar-widget-title">by Genres:</h3>
+                        <ul>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="Freelance" />
+                              <label for="Freelance"><span></span>Action</label>
+                           </li>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="Full_Time" />
+                              <label for="Full_Time"><span></span>Commedy</label>
+                           </li>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="Internship" />
+                              <label for="Internship"><span></span>Sci-fi</label>
+                           </li>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="Part_Time" />
+                              <label for="Part_Time"><span></span>Adventure</label>
+                           </li>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="Temporary" />
+                              <label for="Temporary"><span></span>Historical</label>
+                           </li>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="Crime" />
+                              <label for="Crime"><span></span>Crime</label>
+                           </li>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="Drama" />
+                              <label for="Drama"><span></span>Drama</label>
+                           </li>
+                           <li class="checkbox">
+                              <input class="checkbox-spin" type="checkbox" id="animation" />
+                              <label for="animation"><span></span>animation</label>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- Single Widget End -->
+                      
+                     <!-- Single Widget Start -->
+                     <div class="single-sidebar-widget">
+                        <h3 class="sidebar-widget-title">coming soon:</h3>
+                        <div class="coming-soon-slider owl-carousel">
+                           <div class="single-comingsoon-slider">
+                              <div class="comingsoon-img">
+                                 <img src="assets/img/news-1.jpeg" alt="slider" />
+                              </div>
+                              <div class="comingsoon-text">
+                                 <h4>into the wild</h4>
+                                 <p>Release on: <span>20 dec,2018</span></p>
+                              </div>
+                           </div>
+                           <div class="single-comingsoon-slider">
+                              <div class="comingsoon-img">
+                                 <img src="assets/img/news-2.jpeg" alt="slider" />
+                              </div>
+                              <div class="comingsoon-text">
+                                 <h4>blade runner </h4>
+                                 <p>Release on: <span>20 dec,2018</span></p>
+                              </div>
+                           </div> 
+                        </div>
+                     </div>
+                     <!-- Single Widget End -->
+                      
+                     <!-- Single Widget Start -->
+                     <div class="single-sidebar-widget">
+                        <h3 class="sidebar-widget-title">top movies:</h3>
+                        <div class="top-movie-list">
+                           <div class="sidebar-top-movie tablet-view">
+                              <div class="sidebar-top-movie-left">
+                                 <a href="#">
+                                 <img src="{{ movie.main_movie_image.url }}" alt="top movie" />
+                                 </a>
+                              </div>
+                              <div class="sidebar-top-movie-right">
+                                 <h3><a href="#">{{ movie.title }}</a></h3>
+                                 <p>{{ movie.genre }}</p>
+                                 <ul>
+                                    <li class="rating"><i class="fa fa-star"></i>4.5</li>
+                                    <li class="dsc">HD</li>
+                                    <li class="dsc"></li>
+                                 </ul>
+                                 <h4 class="director">Movie Director - <span>Jhon Doe</span></h4>
+                                 <div class="top-action">
+                                    <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
+                                 </div>
+ 
+                                 
+                              </div>
+                           </div>
+                        </div>                      
+                     </div>
+                     <!-- Single Widget End -->
+                      
+                  </div>
+               </div>
+               <div class="col-lg-9">
+                  <div class="browse-option-box margin-top">
+                     <div class="total-item-show">
+                        <p>{{movies.count}} </p>
+                     </div>
+                     <div class="total-item-show sorter">
+                        <p>Sort by:</p>
+                        <select>
+                           <option value="popularity">Descending</option>
+                           <option value="popularity">Ascending</option>
+                           <option value="rating">Rating</option>
+                           <option value="date">Release date</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="movie-grid-box">
+                     {% for movie in movies %}
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="single-movie-list movie-grid-layout">
+                              <div class="single-movie-list-left">
+                                 <a href="#">
+                                 <img src="{{ movie.main_movie_image.url}}" alt="top movie">
+                                 </a>
+                              </div>
+                              <div class="single-movie-list-right">
+                                 <h3><a href="#">{{ movie.title }}</a></h3>
+                                 <p class="list-genre">{{ movie.genre }}</p>
+                                 <ul>
+                                    <li class="rating"><i class="fa fa-star"></i>{{ movie.ratig }}</li>
+                                    <li class="dsc">HD</li>
+                                    <li class="dsc">{{ movie.age }}</li>
+                                 </ul>
+                                 <div class="movie-details-thumbs">
+                                    <ul>
+                                       <li>
+                                          <a href="#"><i class="fa fa-thumbs-up"></i>
+                                          256</a>
+                                       </li>
+                                       <li>
+                                          <a href="#"><i class="fa fa-eye"></i>45</a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="movie-list-info">
+                                    <div class="list-info-left">
+                                       <p>Director: <span>{{ movie.director_film }}</span></p>
+                                       <p>Release: <span>{{ movie.created }}</span></p>
+                                    </div>
+                                    <div class="top-action">
+                                       <a href="https://www.youtube.com/watch?v=1Q8fG0TtVAY" class="popup-youtube"><i class="fa fa-play"></i> Watch Trailer</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           {% endfor %}
+                        </div>
+                                         
+                  <!-- Pagination Start -->
+                  <div class="pagination-box-row responsive-pag margin-top">
+                     <p>Page 1 of 6</p>
+                     <ul class="pagination">
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li>...</li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                     </ul>
+                  </div>
+                  <!-- Pagination End -->
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Movie List Area End -->
+       
+      {% include 'include/footer.html' %}     
+      {% endblock %}
+      

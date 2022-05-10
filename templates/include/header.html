@@ -40,7 +40,7 @@
                  <div class="col-lg-2">
                     <div class="site-logo">
                        <a href="{% url 'index' %}">
-                       <img src="{{ home.logo.url }}" style="width: 85px;" alt="filmoja" />
+                       <img src="{{ home.logo.url }}" style="width: 85px;" alt="Online-Cinema" />
                        </a>
                     </div>
                     <!-- Responsive Menu Start -->
@@ -49,12 +49,12 @@
                  </div>
                  <div class="col-lg-4">
                     <div class="header-main-search hide-mobile">
-                       <form>
-                          <input type="search" placeholder="Search...">
+                       <form action="{% url 'search_movie' %}" >
+                          <input type="search" placeholder="Поиск..."  name="key" >
                           <button type="submit">
                           <i class="fa fa-search"></i>
                           </button>
-                       </form>
+                       </form  >
                     </div>
                  </div>
                  <div class="col-lg-6">
@@ -64,7 +64,7 @@
                              <!-- Mobile Search Start -->
                              <li class="header-main-search hide-desktop">
                                 <form>
-                                   <input type="search" placeholder="Search...">
+                                   <input type="search" placeholder="Поиск">
                                    <button type="submit">
                                    <i class="fa fa-search"></i>
                                    </button>
@@ -93,7 +93,7 @@
                                 </ul>
                              </li>
                              <li>
-                                <a href="#">Фильмы</a>
+                                <a href="{% url 'movie_full-grid' %}">Фильмы</a>
                                 <ul>
                                    <li><a href="movie-list.html">Список фильмов</a></li>
                                    <li class="submenu-parent">
@@ -115,10 +115,6 @@
                              </li>
                              <li>
                                 <a href="#">Знаменитости</a>
-                                <ul>
-                                   <li><a href="celebrities.html">Все знаменитости</a></li>
-                                   <li><a href="celebritie-details.html">Подробности о знаменитостях</a></li>
-                                </ul>
                              </li>
                              <li><a href="{% url 'contact' %}">Контакты</a></li>
                           </ul>

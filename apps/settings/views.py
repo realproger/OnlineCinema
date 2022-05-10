@@ -56,3 +56,4 @@ def contact(request):
         'home':home,
     }
     return render(request, "contact.html",  context )
+

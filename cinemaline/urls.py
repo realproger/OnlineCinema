@@ -26,7 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.settings.urls')),
     path('', include('apps.users.urls')),
-    # path('', include('apps.movies.urls')),
+    path('', include('apps.movies.urls')),
+    path('', include('apps.categories.urls')),
     path('accounts/', include('allauth.urls')),
     # path('logout/', LogoutView.as_view(), name='logout'),
    

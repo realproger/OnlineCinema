@@ -852,7 +852,7 @@ li {
 	width: 0;
 	z-index: 1;
 	height: 0;
-	content: " ";
+	content: "";
 	border-top: 65px solid transparent;
 	border-left: 50vw solid #fff;
 }
@@ -870,11 +870,11 @@ li {
 }
 
 /* .slide-item-3 {
-	background: red;
+	background: url(../img/slider-1.jpeg);
 }
 
 .slide-item-2 {
-	background: url();
+	background: url(../img/slider-2.jpeg);
 }
 
 .slide-item-5 {
@@ -882,20 +882,19 @@ li {
 } */
 
 .filmoja-main-caption {
-	background: #fbbd61;
+	background: rgba(28, 28, 28, 0.74) none repeat scroll 0 0
 }
- 
+
 .filmoja-main-slide {
 	background-color: #fff;
 	background-position: center center;
-	background-size: 80px;
-
-} 
-.fimo
+	background-size: cover;
+	height: 700px;
+}
 
 .slider-content-holder {
 	width: 100%;
-	
+	text-align: center
 }
 
 .filmoja-main-caption {
@@ -911,28 +910,27 @@ li {
 }
 
 .slider-text h2 {
-	color: rgba(32, 27, 27, 0.676);
+	color: #fff;
 	font-family: 'Orbitron', sans-serif;
 	font-size: 50px;
 	font-weight: 500;
-	text-shadow: 1px 1px 1px rgba(203, 40, 40, 0.004);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
 	text-transform: capitalize;
 	letter-spacing: 3px;
 	line-height: 60px;
 }
 
 .slider-text h4 {
-	color: rgba(52, 20, 20, 0.731);
+	color: #fff;
 	font-size: 17px;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight: 400;
 	letter-spacing: 7px;
-	margin-bottom: 15px;
+	margin-bottom: 15px
 }
 
-
 .slider-text p {
-	color: rgb(26, 61, 27);
+	color: #fff;
 	font-size: 16px;
 	font-weight: 400;
 	margin: 15px 0;
@@ -944,7 +942,7 @@ li {
 	-webkit-transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
 	transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
 	opacity: 0;
-	 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
 .filmoja-slide:hover .owl-nav>.owl-prev {
@@ -956,8 +954,8 @@ li {
 
 .filmoja-slide .owl-nav>.owl-next {
 	visibility: hidden;
-	-webkit-transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
-	transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+	-webkit-transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
+	transition: all 0.2s cubic-bezier(.83, .8, .11, .64) 0s;
 	opacity: 0;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
@@ -970,7 +968,7 @@ li {
 }
 
 .filmoja-slide .owl-prev {
-	left: -10px;
+	left: -30px;
 	position: absolute;
 	top: 45%;
 }
@@ -989,8 +987,8 @@ li {
 	background-image: -webkit-linear-gradient(left, #fbbd61, #ec7532);
 	background-image: linear-gradient(to right, #fbbd61, #ec7532);
 	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 100;
-	font-size: 10px;
+	font-weight: 400;
+	font-size: 16px;
 	color: #fff;
 	text-align: center;
 	position: relative;
@@ -1002,9 +1000,9 @@ li {
 	border-radius: 25px;
 }
 
-	.popup-youtube i {
-		margin-left: 5px
-	} 
+.popup-youtube i {
+	margin-left: 5px
+}
 
 
 /*================================================
